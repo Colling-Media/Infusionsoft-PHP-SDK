@@ -41,19 +41,19 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 
 ##### Generate Authroization URL
 This will return the URL required to authroize a user, and redirect them back to your application
-```
+```php
 $url = $infusionsoft->authorize()->getAuthorizationUrl();
 ```
 
 ##### Get Token from Response Code
 This will exchange the code variable in the URL on a redirect from Infusionsoft for an access token, verifying it against the `client_id`, `client_secret`, and `redirect_uri`.
-```
+```php
 $code = $_GET['code'];
 $token = $infusionsoft->authorize()->getToken($code);
 ```
 
 ##### Refresh Token
 This will refresh the access token you have by sending the refresh code, and getting the response back.
-```
+```php
 $refreshedToken = $infusionsoft->authorize()->refreshToken();
 ```
