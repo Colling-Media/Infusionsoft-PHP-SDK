@@ -95,7 +95,7 @@ $campaign = $infusionsoft->campaigns()->getCampaign($campaignId);
 
 Get, update, and delete contacts.
 
-####Setup
+#### Setup
 ```php
 <?php
 $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
