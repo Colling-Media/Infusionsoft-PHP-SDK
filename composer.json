@@ -1,5 +1,5 @@
 {
-    "name": "Colling-Media/Infusionsoft-PHP-SDK",
+    "name": "collingmedia/infusionsoft-php-sdk",
     "description": "A swagger generated version of the Infusionsoft REST API.",
     "keywords": [
         "infusionsoft",

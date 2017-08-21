@@ -11,7 +11,7 @@ PHP 5.4.0 and later
 To install the bindings via [Composer](http://getcomposer.org/):
 
 ```
-composer install CollingMedia/Infusionsoft-PHP-SDK
+composer install collingmedia/infusionsoft-php-sdk
 ```
 
 ### Manual Installation
