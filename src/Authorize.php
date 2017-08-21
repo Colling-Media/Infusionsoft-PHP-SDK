@@ -60,10 +60,10 @@ class Authorize extends Infusionsoft {
 	 *
 	 * @return mixed
 	 */
-	public function refreshToken($token) {
+	public function refreshToken() {
 		$request = $this->send("POST", "https://api.infusionsoft.com/token", [
 			'form_params' => [
-				'refresh_token' => $token,
+				'refresh_token' => $this->options['access_token']['refresh_token'],
 				'grant_type' => 'refresh_token',
 			],
 			'headers' => [
