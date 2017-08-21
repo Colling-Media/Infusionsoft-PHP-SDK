@@ -33,7 +33,7 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 
 Generate the URLs required, along with retreiving access tokens, and refreshing tokens.
 
-####Setup
+#### Setup
 ```php
 <?php
 $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
@@ -67,7 +67,7 @@ $refreshedToken = $infusionsoft->authorize()->refreshToken();
 
 Get, update, and delete campaigns.
 
-####Setup
+#### Setup
 ```php
 <?php
 $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
