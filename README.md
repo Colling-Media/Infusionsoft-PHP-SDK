@@ -15,7 +15,7 @@ composer require collingmedia/infusionsoft-php-sdk
 ```
 
 
-###Getting Started
+### Getting Started
 
 Getting started is easy, you just have to pass the variables required to use the endpoints you want. For instance, the access token is not required if you are using the authorzation endpoints, but everything is required for any other request.
 
@@ -29,7 +29,7 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 ]);
 ```
 
-####Authroization
+#### Authroization
 ```php
 <?php
 $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
@@ -39,20 +39,20 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 ]);
 ```
 
-#####Generate Authroization URL
+##### Generate Authroization URL
 This will return the URL required to authroize a user, and redirect them back to your application
 ```
 $url = $infusionsoft->authorize()->getAuthorizationUrl();
 ```
 
-#####Get Token from Response Code
+##### Get Token from Response Code
 This will exchange the code variable in the URL on a redirect from Infusionsoft for an access token, verifying it against the `client_id`, `client_secret`, and `redirect_uri`.
 ```
 $code = $_GET['code'];
 $token = $infusionsoft->authorize()->getToken($code);
 ```
 
-#####Refresh Token
+##### Refresh Token
 This will refresh the access token you have by sending the refresh code, and getting the response back.
 ```
 $refreshedToken = $infusionsoft->authorize()->refreshToken();
