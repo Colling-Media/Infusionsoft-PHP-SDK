@@ -115,5 +115,5 @@ $campaigns = $infusionsoft->contacts()->listContacts();
 #### Get a Specific Campaign
 This will return the contact you specify by using the ID.
 ```php
-$campaign = $infusionsoft->contacts()->getContact($contatId);
+$campaign = $infusionsoft->contacts()->getContact($contactId);
 ```
