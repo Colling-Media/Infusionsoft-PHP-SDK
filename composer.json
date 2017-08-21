@@ -1,36 +1,33 @@
 {
-    "name": "collingmedia/infusionsoft-php-sdk",
-    "description": "A swagger generated version of the Infusionsoft REST API.",
+    "name": "collingmedia/infusionsoft",
+    "description": "Infusionsoft PHP API - an easy to use version of the PHP Infusionsoft API using GuzzleHTTP.",
     "keywords": [
         "infusionsoft",
-        "swagger",
         "php",
         "sdk"
     ],
-    "homepage": "http://infusionsoft.com",
-    "license": "MIT",
+    "homepage": "http://collingmedia.com",
+    "license": "",
     "authors": [
         {
             "name": "Colling Media",
-            "homepage": ""
+            "homepage": "https://github.com/colling-media"
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">=7.0",
         "ext-curl": "*",
         "ext-json": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
-        "satooshi/php-coveralls": "~1.0",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "~1.12"
+        "phpunit/phpunit": "~4.8"
     },
     "autoload": {
-        "psr-4": { "CollingMedia\\Infusionsoft\\" : "lib/" }
+        "psr-4": { "CollingMedia\\Infusionsoft\\" : "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "CollingMedia\\Infusionsoft\\" : "test/" }
+        "psr-4": { "CollingMedia\\Infusionsoft\\" : "src/" }
     }
 }
