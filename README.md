@@ -43,20 +43,20 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 ]);
 ```
 
-##### Generate Authroization URL
+#### Generate Authroization URL
 This will return the URL required to authroize a user, and redirect them back to your application
 ```php
 $url = $infusionsoft->authorize()->getAuthorizationUrl();
 ```
 
-##### Get Token from Response Code
+#### Get Token from Response Code
 This will exchange the code variable in the URL on a redirect from Infusionsoft for an access token, verifying it against the `client_id`, `client_secret`, and `redirect_uri`.
 ```php
 $code = $_GET['code'];
 $token = $infusionsoft->authorize()->getToken($code);
 ```
 
-##### Refresh Token
+#### Refresh Token
 This will refresh the access token you have by sending the refresh code, and getting the response back.
 ```php
 $refreshedToken = $infusionsoft->authorize()->refreshToken();
@@ -78,13 +78,13 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 ]);
 ```
 
-##### List All Campaigns
+#### List All Campaigns
 This will return all of the campaigns in Infusionsoft, results are paginated.
 ```php
 $campaigns = $infusionsoft->campaigns()->listCampaigns();
 ```
 
-##### Get a Specific Campaign
+#### Get a Specific Campaign
 This will return the campaign you specify by using the ID.
 ```php
 $campaign = $infusionsoft->campaigns()->getCampaign($campaignId);
@@ -106,13 +106,13 @@ $infusionsoft = new CollingMedia\Infusionsoft\Infusionsoft([
 ]);
 ```
 
-##### List All Contacts
+#### List All Contacts
 This will return all of the contacts in Infusionsoft, results are paginated.
 ```php
 $campaigns = $infusionsoft->contacts()->listContacts();
 ```
 
-##### Get a Specific Campaign
+#### Get a Specific Campaign
 This will return the contact you specify by using the ID.
 ```php
 $campaign = $infusionsoft->contacts()->getContact($contatId);
