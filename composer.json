@@ -1,0 +1,36 @@
+{
+    "name": "Colling-Media/Infusionsoft-PHP-SDK",
+    "description": "A swagger generated version of the Infusionsoft REST API.",
+    "keywords": [
+        "infusionsoft",
+        "swagger",
+        "php",
+        "sdk"
+    ],
+    "homepage": "http://infusionsoft.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Colling Media",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "satooshi/php-coveralls": "~1.0",
+        "squizlabs/php_codesniffer": "~2.6",
+        "friendsofphp/php-cs-fixer": "~1.12"
+    },
+    "autoload": {
+        "psr-4": { "CollingMedia\\Infusionsoft\\" : "lib/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "CollingMedia\\Infusionsoft\\" : "test/" }
+    }
+}
