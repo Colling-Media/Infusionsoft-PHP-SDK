@@ -59,10 +59,26 @@ class Infusionsoft {
 	}
 
 	/**
+	 * @param string $contactId
+	 *
+	 * @return Contact
+	 */
+	public function contact(string $contactId) {
+		return new Contact($this->options, $contactId);
+	}
+
+	/**
 	 * @return Campaigns
 	 */
 	public function campaigns() {
 		return new Campaigns($this->options);
+	}
+
+	/**
+	 * @return ECommerce
+	 */
+	public function ecommerce() {
+		return new ECommerce($this->options);
 	}
 
 	/**
