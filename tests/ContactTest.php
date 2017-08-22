@@ -16,10 +16,10 @@ final class ContactTest extends TestCase {
 	public function setup() {
 		$this->contact = null;
 		$this->infusionsoft = new \CollingMedia\Infusionsoft\Infusionsoft([
-			"client_id" => $_ENV["INFUSIONSOFT_CLIENT_ID"],
-			"client_secret" => $_ENV["INFUSIONSOFT_CLIENT_SECRET"],
-			"redirect_uri" => $_ENV["INFUSIONSOFT_REDIRECT_URI"],
-			"access_token" => json_decode(urldecode($_ENV["INFUSIONSOFT_ACCESS_TOKEN_JSON"]), true)
+			"client_id" => getenv("INFUSIONSOFT_CLIENT_ID"),
+			"client_secret" => getenv("INFUSIONSOFT_CLIENT_SECRET"),
+			"redirect_uri" => getenv("INFUSIONSOFT_REDIRECT_URI"),
+			"access_token" => json_decode(urldecode(getenv("INFUSIONSOFT_ACCESS_TOKEN_JSON")), true)
 		]);
 	}
 
@@ -52,8 +52,27 @@ final class ContactTest extends TestCase {
 	 * @return
 	 */
 	public function testUpdateContact($contact) {
-		$this->assertNotTrue(false);
-		return $contact;
+
+		$updatedContact = [
+			"given_name" => "Test",
+			"family_name" => "Update",
+			"email_addresses" => [
+				[
+					"email" => "test@gmail.com",
+					"field" => "EMAIL1"
+				]
+			],
+			"phone_numbers" => [
+				[
+					"number" => "5555555555",
+					"field" => "PHONE1"
+				]
+			]
+		];
+
+		$response = $this->infusionsoft->contacts()->updateContact($contact['id'], $updatedContact);
+		$this->assertTrue(($response['id'] > 0));
+		return $response;
 	}
 
 	/**

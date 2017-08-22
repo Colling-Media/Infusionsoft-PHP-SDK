@@ -1,7 +1,8 @@
+os:
+  - linux
 language: php
 php:
   - '7.1'
-  - hhvm
   - nightly
 install:
   - composer install
