@@ -51,7 +51,7 @@ class Contact extends Infusionsoft {
 	 * Lists applied tags from
 	 * the contact.
 	 *
-	 * @return mixed
+f	 * @return mixed
 	 */
 	public function listTags() {
 		$request = $this->send("GET", "contacts/" . $this->contactId . '/tags', [

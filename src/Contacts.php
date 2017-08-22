@@ -152,7 +152,10 @@ class Contacts extends Infusionsoft {
 
 	/**
 	 *
-	 * Delete a contact based on Contact ID
+	 * Delete Contact
+	 *
+	 * Delete a contact from Infusionsoft
+	 * based on the Contact ID.
 	 *
 	 * @param $contactId
 	 *
@@ -165,5 +168,25 @@ class Contacts extends Infusionsoft {
 			]
 		], false);
 		return $request;
-    }
+	}
+
+
+	/**
+	 *
+	 * Custom Fields
+	 *
+	 * Get the custom fields that a
+	 * contact can have assigned
+	 * to it.
+	 *
+	 * @return mixed
+	 */
+	public function customFields() {
+		$request = $this->send("GET", 'contactCustomFields', [
+			'headers' => [
+				'Accept' => 'application/json, */*'
+			]
+		]);
+		return $request;
+	}
 }
