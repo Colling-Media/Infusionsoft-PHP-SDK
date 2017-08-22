@@ -2,6 +2,15 @@
 
 namespace CollingMedia\Infusionsoft;
 
+/**
+ * Class Contacts
+ * @package CollingMedia\Infusionsoft
+ *
+ * All functions that interact with contacts
+ * in Infusionsoft.
+ *
+ */
+
 class Contacts extends Infusionsoft {
 
 	/**
@@ -23,15 +32,15 @@ class Contacts extends Infusionsoft {
 	 * List all contacts in Infusionsoft
 	 *
 	 * @param int $limit - 1000 is the max able to be returned at once
-	 * @param null $offset
-	 * @param null $email
-	 * @param null $given_name
-	 * @param null $family_name
-	 * @param null $order
+	 * @param int|null $offset
+	 * @param string $email
+	 * @param string $given_name
+	 * @param string $family_name
+	 * @param string $order
 	 *
 	 * @return mixed
 	 */
-	public function listContacts($limit = 1000, $offset = null, $email = null, $given_name = null, $family_name = null, $order = null) {
+	public function listContacts(int $limit = 1000, int $offset = null, string $email = null, string $given_name = null, string $family_name = null, string $order = null) {
 	    $query = [];
 	    //Building the query
 	    if($limit)

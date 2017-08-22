@@ -2,6 +2,15 @@
 
 namespace CollingMedia\Infusionsoft;
 
+/**
+ * Class Campaigns
+ * @package CollingMedia\Infusionsoft
+ *
+ * All functions that interact with campaigns
+ * in Infusionsoft.
+ *
+ */
+
 class Campaigns extends Infusionsoft {
 
 	/**
@@ -31,12 +40,12 @@ class Campaigns extends Infusionsoft {
 	 * limit is 100, and you have 200 campaigns,
 	 * the offset for page 2 should be 100.
 	 *
-	 * @param int $limit - 1000 is the max able to be returned at once
-	 * @param null $offset
+	 * @param int $limit The limit you want to get per page. Max is 1000
+	 * @param int $offset The offset from the start. (for pagination)
 	 *
 	 * @return mixed
 	 */
-	public function listCampaigns($limit = 1000, $offset = null) {
+	public function listCampaigns(int $limit = 1000, int $offset = null) {
 		$query = [];
 		if($limit)
 			$query['limit'] = $limit;
@@ -61,7 +70,7 @@ class Campaigns extends Infusionsoft {
 	 * details than you would through
 	 * the List Campaigns function.
 	 *
-	 * @param $campaignId
+	 * @param $campaignId The ID of the campaign ou want to retrieve.
 	 *
 	 * @return mixed
 	 */
@@ -85,9 +94,9 @@ class Campaigns extends Infusionsoft {
 	 * based on the Contact ID, Campaign ID,
 	 * and Sequence ID.
 	 *
-	 * @param string $campaignId
-	 * @param string $sequenceId
-	 * @param array $contactIds
+	 * @param string $campaignId The ID of the campaign.
+	 * @param string $sequenceId The ID of the sequence.
+	 * @param array $contactIds An array of IDs of contacts you want to add.
 	 *
 	 * @return mixed
 	 */
@@ -105,15 +114,15 @@ class Campaigns extends Infusionsoft {
 
 	/**
 	 *
-	 * Add Contacts to Campaign Sequence
+	 * Add a Contact to Campaign Sequence
 	 *
-	 * Add contacts to a campaign sequence
+	 * Add a contact to a campaign sequence
 	 * based on the Contact ID, Campaign ID,
 	 * and Sequence ID.
 	 *
-	 * @param string $campaignId
-	 * @param string $sequenceId
-	 * @param string $contactId
+	 * @param string $campaignId The ID of the campaign.
+	 * @param string $sequenceId The ID of the sequence.
+	 * @param string $contactId The ID of the contact you want to add.
 	 *
 	 * @return mixed
 	 */
@@ -137,9 +146,9 @@ class Campaigns extends Infusionsoft {
 	 * sequence, based on Contact IDs,
 	 * Campaign ID, and Sequence ID.
 	 *
-	 * @param string $campaignId
-	 * @param string $sequenceId
-	 * @param array $contactIds
+	 * @param string $campaignId The ID of the campaign.
+	 * @param string $sequenceId The ID of the sequence.
+	 * @param array $contactIds An array of IDs you want to remove.
 	 *
 	 * @return mixed
 	 */
@@ -163,9 +172,9 @@ class Campaigns extends Infusionsoft {
 	 * sequence, based on Contact ID,
 	 * Campaign ID, and Sequence ID.
 	 *
-	 * @param string $campaignId
-	 * @param string $sequenceId
-	 * @param string $contactId
+	 * @param string $campaignId The ID of the campaign.
+	 * @param string $sequenceId The ID of the sequence.
+	 * @param string $contactId The ID of the contact you want to remove.
 	 *
 	 * @return mixed
 	 */

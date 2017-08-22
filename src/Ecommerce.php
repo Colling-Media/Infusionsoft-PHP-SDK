@@ -2,7 +2,16 @@
 
 namespace CollingMedia\Infusionsoft;
 
-class ECommerce extends Infusionsoft {
+/**
+ * Class Ecommerce
+ * @package CollingMedia\Infusionsoft
+ *
+ * All functions that ineteract with e-commerce
+ * in Infusionsoft.
+ *
+ */
+
+class Ecommerce extends Infusionsoft {
 
 	/**
 	 * Campaigns constructor.
@@ -31,14 +40,14 @@ class ECommerce extends Infusionsoft {
 	 * limit is 100, and you have 200 orders,
 	 * the offset for page 2 should be 100.
 	 *
-	 * @param null|string $since
-	 * @param null|string $until
+	 * @param string $since
+	 * @param string $until
 	 * @param int $limit - 1000 is the max able to be returned at once
-	 * @param null|string $offset
-	 * @param null|bool $paid
-	 * @param null|string $order
-	 * @param null|string $contactId
-	 * @param null|string $productId
+	 * @param string $offset
+	 * @param bool $paid
+	 * @param string $order
+	 * @param string $contactId
+	 * @param string $productId
 	 *
 	 * @return mixed
 	 */
@@ -104,11 +113,11 @@ class ECommerce extends Infusionsoft {
 	 * limit is 100, and you have 200 transactions,
 	 * the offset for page 2 should be 100.
 	 *
-	 * @param null|string $since
-	 * @param null|string $until
+	 * @param string $since
+	 * @param string $until
 	 * @param int $limit - 1000 is the max able to be returned at once
-	 * @param null|string $offset
-	 * @param null|string $contactId
+	 * @param string $offset
+	 * @param string $contactId
 	 *
 	 * @return mixed
 	 */
@@ -170,11 +179,11 @@ class ECommerce extends Infusionsoft {
 	 * for page 2 should be 100.
 	 *
 	 * @param string $orderId
-	 * @param null|string $since
-	 * @param null|string $until
+	 * @param string $since
+	 * @param string $until
 	 * @param int $limit - 1000 is the max able to be returned at once
-	 * @param null|string $offset
-	 * @param null|string $contactId
+	 * @param string $offset
+	 * @param string $contactId
 	 *
 	 * @return mixed
 	 */

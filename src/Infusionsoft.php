@@ -2,23 +2,63 @@
 
 namespace CollingMedia\Infusionsoft;
 
+use Countable;
 use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
 
-class Infusionsoft {
+class Infusionsoft implements Countable {
 
+	/**
+	 * URL
+	 *
+	 * The endpoint for all interactions on Infusionsoft.
+	 *
+	 * @var string
+	 */
 	protected $url = 'https://api.infusionsoft.com/crm/rest/v1/';
+
+	/**
+	 * Client
+	 *
+	 * The client used by Guzzle and all functions in the package.
+	 *
+	 * @var object
+	 */
 	protected $client = null;
+
+	/**
+	 * Access Token
+	 *
+	 * The access token used for all requests.
+	 *
+	 * @var array
+	 */
 	protected $access_token = null;
-	protected $client_id = null;
-	protected $client_secret = null;
-	protected $redirect_uri = null;
+
+	/**
+	 * Options
+	 *
+	 * The options config that includes the `client_id`,
+	 * `client_secret`, `redirect_uri`, and `access_token`.
+	 *
+	 * @var array
+	 */
 	protected $options;
+
+	/**
+	 * Count
+	 *
+	 * A counter.
+	 *
+	 * @var int
+	 */
+	private $count = 0;
 
 
 	/**
 	 * Infusionsoft constructor.
 	 *
-	 * @param array $options
+	 * @param array $options The options config array. See $options variable.
 	 *
 	 * @throws \Exception
 	 */
@@ -45,53 +85,78 @@ class Infusionsoft {
 	}
 
 	/**
+	 * Authorization Class
+	 *
+	 * Returns the Authorize Class
+	 *
 	 * @return Authorize
 	 */
-	public function authorize() {
+	protected function authorize() {
 		return new Authorize($this->options);
 	}
 
 	/**
+	 * Contacts Class
+	 *
+	 * Returns the Contacts Class
+	 *
 	 * @return Contacts
 	 */
-	public function contacts() {
+	protected function contacts() {
 		return new Contacts($this->options);
 	}
 
 	/**
-	 * @param string $contactId
+	 * Contact Class
+	 *
+	 * Returns the Contact Class
+	 *
+	 * @param string $contactId The ID of the contact you want to interact with.
 	 *
 	 * @return Contact
 	 */
-	public function contact(string $contactId) {
+	protected function contact(string $contactId) {
 		return new Contact($this->options, $contactId);
 	}
 
 	/**
+	 * Campaigns Class
+	 *
+	 * Returns the Campaigns Class
+	 *
 	 * @return Campaigns
 	 */
-	public function campaigns() {
+	protected function campaigns() {
 		return new Campaigns($this->options);
 	}
 
 	/**
-	 * @return ECommerce
+	 * Ecommerce Class
+	 *
+	 * Returns the Ecommerce Class
+	 *
+	 * @return Ecommerce
 	 */
-	public function ecommerce() {
-		return new ECommerce($this->options);
+	protected function ecommerce() {
+		return new Ecommerce($this->options);
 	}
 
 	/**
-	 * @param string $method
-	 * @param string $url
-	 * @param array $options
-	 * @param bool $json
+	 * Send
 	 *
-	 * @return mixed
+	 * Sends the request on through Guzzle and returns
+	 * either the request object or array.
+	 *
+	 * @param string $method The method used in the request (GET, POST, DELETE, PATCH, PUT...)
+	 * @param string $url The URL the request should be made to.
+	 * @param array $options The options you need for the GuzzleHTTP request.
+	 * @param bool $array Return array, or the request object? (true for array, false for request object)
+	 *
+	 * @return Response|array
 	 */
-	protected function send(string $method, string $url, array $options, $json = true) {
+	protected function send(string $method, string $url, array $options, $array = true) {
 		$request = $this->client->request($method, $url, $options);
-		if(!$json) {
+		if(!$array) {
 			return $request;
 		} else {
 			return json_decode( $request->getBody()->getContents() , true);

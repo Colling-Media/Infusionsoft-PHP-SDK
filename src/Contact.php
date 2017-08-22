@@ -2,8 +2,21 @@
 
 namespace CollingMedia\Infusionsoft;
 
+/**
+ * Class Contact
+ * @package CollingMedia\Infusionsoft
+ *
+ * All functions that interact with a contact
+ * in Infusionsoft.
+ *
+ */
+
 class Contact extends Infusionsoft {
 	/**
+	 * The ID of the contact
+	 * you are interacting with
+	 * in Infusionsoft.
+	 *
 	 * @var string
 	 */
 	private $contactId;
@@ -13,7 +26,7 @@ class Contact extends Infusionsoft {
 	 *
 	 * @param array $accessToken
 	 *
-	 * @param string $contactId
+	 * @param string $contactId The ID of the contact you want to interact with.
 	 *
 	 * @throws \Exception
 	 */
@@ -51,7 +64,7 @@ class Contact extends Infusionsoft {
 	 * Lists applied tags from
 	 * the contact.
 	 *
-f	 * @return mixed
+	 * @return mixed
 	 */
 	public function listTags() {
 		$request = $this->send("GET", "contacts/" . $this->contactId . '/tags', [
@@ -68,7 +81,7 @@ f	 * @return mixed
 	 *
 	 * Apply tags to the contact.
 	 *
-	 * @param array $tagIds
+	 * @param array $tagIds An array of IDs of tags you want to apply to the contact.
 	 *
 	 * @return mixed
 	 */
@@ -91,7 +104,7 @@ f	 * @return mixed
 	 * Removes a tag from
 	 * the contact specified.
 	 *
-	 * @param string $tagId
+	 * @param string $tagId The ID of a tag you want to remove from the contact.
 	 *
 	 * @return mixed
 	 */
@@ -114,7 +127,7 @@ f	 * @return mixed
 	 * Removes a list of tags from
 	 * the contact specified.
 	 *
-	 * @param array $tagIds
+	 * @param array $tagIds An array of IDs you want to remove from the contact.
 	 *
 	 * @return mixed
 	 */

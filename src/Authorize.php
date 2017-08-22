@@ -2,6 +2,14 @@
 
 namespace CollingMedia\Infusionsoft;
 
+/**
+ * Class Authorize
+ * @package CollingMedia\Infusionsoft
+ *
+ * All functions that handle Authorizations
+ * for Infusionsoft.
+ *
+ */
 
 class Authorize extends Infusionsoft {
 
@@ -28,7 +36,7 @@ class Authorize extends Infusionsoft {
 	 *
 	 * * 'full' scope is currently the only one available *
 	 *
-	 * @param string $scopes
+	 * @param string $scopes The scopes you want to authenticate for. Currently, only 'full' is allowed.
 	 *
 	 * @return string
 	 */
@@ -45,7 +53,7 @@ class Authorize extends Infusionsoft {
 	 * the oAuth process, for an access
 	 * token to be used on future calls.
 	 *
-	 * @param $code
+	 * @param $code The code in the URL that you get back from Innfusionsoft.
 	 *
 	 * @return mixed
 	 */
@@ -74,14 +82,12 @@ class Authorize extends Infusionsoft {
 	 * YOU SHOULD SAVE THE NEW TOKEN
 	 * ARRAY IN PLACE OF THE OLD ONE
 	 *
-	 * @param $token
-	 *
 	 * @return mixed
 	 */
 	public function refreshToken($token) {
 		$request = $this->send("POST", "https://api.infusionsoft.com/token", [
 			'form_params' => [
-				'refresh_token' => $token,
+				'refresh_token' => $this->options['access_token']['refresh_token'],
 				'grant_type' => 'refresh_token',
 			],
 			'headers' => [
