@@ -52,8 +52,27 @@ final class ContactTest extends TestCase {
 	 * @return
 	 */
 	public function testUpdateContact($contact) {
-		$this->assertNotTrue(false);
-		return $contact;
+
+		$updatedContact = [
+			"given_name" => "Test",
+			"family_name" => "Update",
+			"email_addresses" => [
+				[
+					"email" => "test@gmail.com",
+					"field" => "EMAIL1"
+				]
+			],
+			"phone_numbers" => [
+				[
+					"number" => "5555555555",
+					"field" => "PHONE1"
+				]
+			]
+		];
+
+		$response = $this->infusionsoft->contacts()->updateContact($contact['id'], $updatedContact);
+		$this->assertNotTrue(($response['id'] > 0));
+		return $response;
 	}
 
 	/**
