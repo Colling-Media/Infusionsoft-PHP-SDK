@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 final class ContactTest extends TestCase {
 
 	protected $infusionsoft;
-	protected $contact;
 
 	public function setup() {
 		$this->infusionsoft = new \CollingMedia\Infusionsoft\Infusionsoft([
@@ -33,18 +32,18 @@ final class ContactTest extends TestCase {
 		];
 
 		$response = $this->infusionsoft->contacts()->createContact($contact);
-		$this->contact = $response;
-		var_dump($this->contact);
 		$this->assertTrue(($this->contact['id'] > 0));
+		return $response;
 	}
 
-	public function testUpdateContact() {
+	public function testUpdateContact($contact) {
 		$this->assertNotTrue(false);
+		return $contact;
 	}
 
-	public function testDeleteContact() {
-		var_dump($this->contact);
-		$response = $this->infusionsoft->contacts()->deleteContact($this->contact['id']);
+	public function testDeleteContact($contact) {
+		var_dump($contact);
+		$response = $this->infusionsoft->contacts()->deleteContact($contact['id']);
 		$this->assertTrue(($response->getStatusCode() == 201));
 	}
 
