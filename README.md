@@ -1,4 +1,7 @@
 # Infusionsoft PHP SDK
+
+[![Build Status](https://travis-ci.org/Colling-Media/Infusionsoft-PHP-SDK.svg?branch=master)](https://travis-ci.org/Colling-Media/Infusionsoft-PHP-SDK)
+
 Infusionsoft PHP API - an easy to use version of the PHP Infusionsoft API using GuzzleHTTP.
 
 ## Requirements
