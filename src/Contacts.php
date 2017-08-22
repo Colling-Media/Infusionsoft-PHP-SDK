@@ -99,7 +99,7 @@ class Contacts extends Infusionsoft {
 			'headers' => [
 				'Accept' => 'application/json, */*'
 			]
-		]);
+		], false);
 		return $request;
     }
 }

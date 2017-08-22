@@ -69,12 +69,13 @@ class Infusionsoft {
 	 * @param string $method
 	 * @param string $url
 	 * @param array $options
+	 * @param bool $json
 	 *
 	 * @return mixed
 	 */
-	protected function send(string $method, string $url, array $options) {
+	protected function send(string $method, string $url, array $options, $json = true) {
 		$request = $this->client->request($method, $url, $options);
-		if(isset($this->options['debug'])) {
+		if(!$json) {
 			return $request;
 		} else {
 			return json_decode( $request->getBody()->getContents() , true);
