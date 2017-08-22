@@ -71,7 +71,7 @@ final class ContactTest extends TestCase {
 		];
 
 		$response = $this->infusionsoft->contacts()->updateContact($contact['id'], $updatedContact);
-		$this->assertNotTrue(($response['id'] > 0));
+		$this->assertTrue(($response['id'] > 0));
 		return $response;
 	}
 
