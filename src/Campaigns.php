@@ -76,4 +76,108 @@ class Campaigns extends Infusionsoft {
 		]);
 		return $request;
 	}
+
+	/**
+	 *
+	 * Add Contacts to Campaign Sequence
+	 *
+	 * Add contacts to a campaign sequence
+	 * based on the Contact ID, Campaign ID,
+	 * and Sequence ID.
+	 *
+	 * @param string $campaignId
+	 * @param string $sequenceId
+	 * @param array $contactIds
+	 *
+	 * @return mixed
+	 */
+	public function addContactsToCampaignSequence(string $campaignId, string $sequenceId, array $contactIds) {
+		$query = [];
+		$query['ids'] = $contactIds;
+		$request = $this->send("POST", "campaigns/" . $campaignId . '/sequences/' . $sequenceId . '/contacts', [
+			'headers' => [
+				'Accept' => 'application/json, */*',
+			],
+			'query' => $query
+		]);
+		return $request;
+	}
+
+	/**
+	 *
+	 * Add Contacts to Campaign Sequence
+	 *
+	 * Add contacts to a campaign sequence
+	 * based on the Contact ID, Campaign ID,
+	 * and Sequence ID.
+	 *
+	 * @param string $campaignId
+	 * @param string $sequenceId
+	 * @param string $contactId
+	 *
+	 * @return mixed
+	 */
+	public function addContactToCampaignSequence(string $campaignId, string $sequenceId, string $contactId) {
+		$query = [];
+		$query['contactId'] = $contactId;
+		$request = $this->send("POST", "campaigns/" . $campaignId . '/sequences/' . $sequenceId . '/contacts', [
+			'headers' => [
+				'Accept' => 'application/json, */*',
+			],
+			'query' => $query
+		]);
+		return $request;
+	}
+
+	/**
+	 *
+	 * Remove Contacts from a Campaign Sequence
+	 *
+	 * Remove contacts from a campaign
+	 * sequence, based on Contact IDs,
+	 * Campaign ID, and Sequence ID.
+	 *
+	 * @param string $campaignId
+	 * @param string $sequenceId
+	 * @param array $contactIds
+	 *
+	 * @return mixed
+	 */
+	public function removeContactsFromCampaignSequence(string $campaignId, string $sequenceId, array $contactIds) {
+		$query = [];
+		$query['ids'] = $contactIds;
+		$request = $this->send("DELETE", "campaigns/" . $campaignId . '/sequences/' . $sequenceId . '/contacts', [
+			'headers' => [
+				'Accept' => 'application/json, */*',
+			],
+			'query' => $query
+		]);
+		return $request;
+	}
+
+	/**
+	 *
+	 * Remove Contact from a Campaign Sequence
+	 *
+	 * Remove a contact from a campaign
+	 * sequence, based on Contact ID,
+	 * Campaign ID, and Sequence ID.
+	 *
+	 * @param string $campaignId
+	 * @param string $sequenceId
+	 * @param string $contactId
+	 *
+	 * @return mixed
+	 */
+	public function removeContactFromCampaignSequence(string $campaignId, string $sequenceId, string $contactId) {
+		$query = [];
+		$query['contactId'] = $contactId;
+		$request = $this->send("DELETE", "campaigns/" . $campaignId . '/sequences/' . $sequenceId . '/contacts', [
+			'headers' => [
+				'Accept' => 'application/json, */*',
+			],
+			'query' => $query
+		]);
+		return $request;
+	}
 }
