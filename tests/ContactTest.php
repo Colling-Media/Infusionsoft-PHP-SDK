@@ -19,7 +19,7 @@ final class ContactTest extends TestCase {
 			"client_id" => getenv("INFUSIONSOFT_CLIENT_ID"),
 			"client_secret" => getenv("INFUSIONSOFT_CLIENT_SECRET"),
 			"redirect_uri" => getenv("INFUSIONSOFT_REDIRECT_URI"),
-			"access_token" => json_decode(urldecode("%7B%22scope%22%3A%20%22full%7Cic386.infusionsoft.com%22%2C%20%22expires_in%22%3A%2086400%2C%20%22token_type%22%3A%20%22bearer%22%2C%20%22access_token%22%3A%20%22as9fe5szgrayhacctncyttfk%22%2C%20%22refresh_token%22%3A%20%22q6yd6j89mnhehstjr85c75kg%22%7D"), true)
+			"access_token" => unserialize(getenv("INFUSIONSOFT_ACCESS_TOKEN_JSON"))
 		]);
 	}
 
