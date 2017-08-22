@@ -1,3 +1,7 @@
+os:
+  - linux
+  - osx
+  - ubuntu
 language: php
 php:
   - '7.1'

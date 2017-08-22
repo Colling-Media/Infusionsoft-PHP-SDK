@@ -21,7 +21,6 @@ final class ContactTest extends TestCase {
 			"redirect_uri" => getenv("INFUSIONSOFT_REDIRECT_URI"),
 			"access_token" => json_decode(urldecode(getenv("INFUSIONSOFT_ACCESS_TOKEN_JSON")), true)
 		]);
-		var_dump($this->infusionsoft);
 	}
 
 	/**
