@@ -16,10 +16,10 @@ final class ContactTest extends TestCase {
 	public function setup() {
 		$this->contact = null;
 		$this->infusionsoft = new \CollingMedia\Infusionsoft\Infusionsoft([
-			"client_id" => getenv("INFUSIONSOFT_CLIENT_ID"),
-			"client_secret" => getenv("INFUSIONSOFT_CLIENT_SECRET"),
-			"redirect_uri" => getenv("INFUSIONSOFT_REDIRECT_URI"),
-			"access_token" => json_decode(urldecode(getenv("INFUSIONSOFT_ACCESS_TOKEN_JSON")), true)
+			"client_id" => $_ENV["INFUSIONSOFT_CLIENT_ID"],
+			"client_secret" => $_ENV["INFUSIONSOFT_CLIENT_SECRET"],
+			"redirect_uri" => $_ENV["INFUSIONSOFT_REDIRECT_URI"],
+			"access_token" => json_decode(urldecode($_ENV["INFUSIONSOFT_ACCESS_TOKEN_JSON"]), true)
 		]);
 	}
 
