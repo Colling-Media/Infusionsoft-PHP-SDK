@@ -19,7 +19,14 @@ class Authorize extends Infusionsoft {
 
 	/**
 	 *
-	 * Get the URL required to authorize a new connection
+	 * Get Authorization URL
+	 *
+	 * Returns the URL required to go
+	 * through the oAuth process,
+	 * requesting access to 'full' scopes
+	 * by default.
+	 *
+	 * * 'full' scope is currently the only one available *
 	 *
 	 * @param string $scopes
 	 *
@@ -31,7 +38,12 @@ class Authorize extends Infusionsoft {
 
 	/**
 	 *
-	 * Exchange the code for an access token from Infusionsoft
+	 * Get Token
+	 *
+	 * Exchange the `code` you receive
+	 * from Infusionsoft in the return from
+	 * the oAuth process, for an access
+	 * token to be used on future calls.
 	 *
 	 * @param $code
 	 *
@@ -52,7 +64,15 @@ class Authorize extends Infusionsoft {
 
 	/**
 	 *
-	 * Refresh the Access Token
+	 * Refresh Token
+	 *
+	 * Refresh the access token you have
+	 * by automatically requesting the
+	 * new token. This is based on the
+	 * array passed in the constructor.
+	 *
+	 * YOU SHOULD SAVE THE NEW TOKEN
+	 * ARRAY IN PLACE OF THE OLD ONE
 	 *
 	 * @param $token
 	 *

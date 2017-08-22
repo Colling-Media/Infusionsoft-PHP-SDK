@@ -57,6 +57,16 @@ class Contacts extends Infusionsoft {
 		return $request;
     }
 
+	/**
+	 *
+	 * Create a contact in Infusionsoft
+	 *  ** THIS CREATES, NOT UPDATES **
+	 *
+	 * @param array $contact
+	 *
+	 * @return mixed
+	 * @throws \Exception
+	 */
 	public function createContact(array $contact) {
 		//Checking for the required fields
 		if(!isset($contact['email_addresses']) && !isset($contact['phone_numbers'])) {
@@ -94,6 +104,9 @@ class Contacts extends Infusionsoft {
 	}
 
 	/**
+	 *
+	 * Update a contact based on Contact ID
+	 *
 	 * @param string $contactId
 	 * @param array $contact
 	 *
@@ -137,7 +150,15 @@ class Contacts extends Infusionsoft {
 	}
 
 
-    public function deleteContact($contactId) {
+	/**
+	 *
+	 * Delete a contact based on Contact ID
+	 *
+	 * @param $contactId
+	 *
+	 * @return mixed
+	 */
+	public function deleteContact($contactId) {
 		$request = $this->send("DELETE", 'contacts/' . $contactId, [
 			'headers' => [
 				'Accept' => 'application/json, */*'

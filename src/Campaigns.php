@@ -21,7 +21,15 @@ class Campaigns extends Infusionsoft {
 
 	/**
 	 *
-	 * List all campaigns in Infusionsoft
+	 * List Campaigns
+	 *
+	 * Get a list of all of the campaigns
+	 * in Infusionsoft, paginated. The max
+	 * is 1000 records per page. Offset is
+	 * the number of records you want to skip
+	 * at the beginning, for instance, if your
+	 * limit is 100, and you have 200 campaigns,
+	 * the offset for page 2 should be 100.
 	 *
 	 * @param int $limit - 1000 is the max able to be returned at once
 	 * @param null $offset
@@ -46,7 +54,12 @@ class Campaigns extends Infusionsoft {
 
 	/**
 	 *
-	 * Get a campaign from Infusionsoft
+	 * Get Campaign
+	 *
+	 * Get a specific campaign
+	 * from Infusionsoft, seeing more
+	 * details than you would through
+	 * the List Campaigns function.
 	 *
 	 * @param $campaignId
 	 *
