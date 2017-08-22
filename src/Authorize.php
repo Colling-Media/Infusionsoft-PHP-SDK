@@ -13,10 +13,8 @@ class Authorize extends Infusionsoft {
 	 * @throws \Exception
 	 */
 	public function __construct( array $options = [] ) {
+		$options['authorize'] = true;
 		parent::__construct( $options );
-		if(!isset($this->options['access_token'])) {
-			throw new \Exception('Access token must be set.');
-		}
 	}
 
 	/**
@@ -60,10 +58,10 @@ class Authorize extends Infusionsoft {
 	 *
 	 * @return mixed
 	 */
-	public function refreshToken() {
+	public function refreshToken($token) {
 		$request = $this->send("POST", "https://api.infusionsoft.com/token", [
 			'form_params' => [
-				'refresh_token' => $this->options['access_token']['refresh_token'],
+				'refresh_token' => $token,
 				'grant_type' => 'refresh_token',
 			],
 			'headers' => [
