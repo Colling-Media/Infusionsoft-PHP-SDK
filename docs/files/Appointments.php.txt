@@ -76,29 +76,136 @@ class Appointments extends Infusionsoft {
 		return $request;
 	}
 
-	/**
-	 *
-	 * Get Appointment
-	 *
-	 * Get a specific appointment
-	 * from Infusionsoft, seeing more
-	 * details than you would through
-	 * the List Appointments function.
-	 *
-	 * @param string $appointmentId The ID of the appointment ou want to retrieve.
-	 *
-	 * @return mixed
-	 */
-	public function getAppointment(string $appointmentId) {
-		$query = [];
-		$query['optional_properties'] = 'goals,sequences';
-		$request = $this->send("GET", "appointments/" . $appointmentId, [
-			'headers' => [
-				'Accept' => 'application/json, */*',
-			],
-			'query' => $query
-		]);
-		return $request;
-	}
+    /**
+     *
+     * Get Appointment
+     *
+     * Get a specific appointment
+     * from Infusionsoft, seeing more
+     * details than you would through
+     * the List Appointments function.
+     *
+     * @param string $appointmentId The ID of the appointment ou want to retrieve.
+     *
+     * @return mixed
+     */
+    public function getAppointment(string $appointmentId) {
+        $request = $this->send("GET", "appointments/" . $appointmentId, [
+            'headers' => [
+                'Accept' => 'application/json, */*',
+            ],
+        ]);
+        return $request;
+    }
+
+    /**
+     *
+     * Create Appointment
+     *
+     * @return mixed
+     *
+     */
+    public function createAppointment(array $appointment) {
+
+        // TODO: Implement createAppointment() method.
+
+//        $request = $this->send("POST", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
+
+    /**
+     *
+     * Update Appointment
+     *
+     * @return mixed
+     */
+    public function updateAppointment(string $appointmentId, array $appointment) {
+
+        // TODO: Implement updateAppointment() method.
+
+//        $request = $this->send("PATCH", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
+
+    /**
+     *
+     * Update Appointment
+     *
+     *
+     * @return mixed
+     */
+    public function deleteAppointment(string $appointmentId) {
+
+        // TODO: Implement deleteAppointment() method.
+
+//        $request = $this->send("DELETE", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
+
+    /**
+     *
+     * Search Appointments
+     *
+     * @return mixed
+     */
+    public function searchAppointments(string $appointmentId) {
+
+        // TODO: Implement searchAppointments() method.
+
+//        $request = $this->send("DELETE", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
+
+    /**
+     *
+     * Replace Appointments
+     *
+     * @return mixed
+     */
+    public function replaceAppointment(string $appointmentId) {
+
+        // TODO: Implement replaceAppointment() method.
+
+//        $request = $this->send("DELETE", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
+
+    /**
+     *
+     * Retrieve Synced Appointments
+     *
+     * @return mixed
+     */
+    public function syncAppointments(string $appointmentId) {
+
+        // TODO: Implement syncAppointments() method.
+
+//        $request = $this->send("DELETE", "appointments/" . $appointmentId, [
+//            'headers' => [
+//                'Accept' => 'application/json, */*',
+//            ],
+//        ]);
+//        return $request;
+    }
 
 }

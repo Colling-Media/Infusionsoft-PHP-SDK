@@ -144,28 +144,28 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1070893056"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-388667691"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1070893056" class="accordion-body collapse in">
+            <div id="namespace-388667691" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2000811706"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1342946275"></a>
                                 <a href="../namespaces/CollingMedia.html" style="margin-left: 30px; padding-left: 0">CollingMedia</a>
             </div>
-            <div id="namespace-2000811706" class="accordion-body collapse ">
+            <div id="namespace-1342946275" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-428254906"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-269891037"></a>
                                 <a href="../namespaces/CollingMedia.Infusionsoft.html" style="margin-left: 30px; padding-left: 0">Infusionsoft</a>
             </div>
-            <div id="namespace-428254906" class="accordion-body collapse ">
+            <div id="namespace-269891037" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -211,9 +211,9 @@
                                             </nav>
                     <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\CollingMedia\Infusionsoft</small>Contacts</h1>
-                    <p><em>Class Contacts</em></p>
-                    <p>All functions that interact with contacts
+                    <h1><small>\CollingMedia\Infusionsoft</small>Products</h1>
+                    <p><em>Class Products</em></p>
+                    <p>All functions that interact with products
 in Infusionsoft.</p>
                     
                                         
@@ -232,12 +232,10 @@ in Infusionsoft.</p>
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method___construct" class="">__construct()</a><br />
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method_listContacts" class="">listContacts()</a><br />
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method_createContact" class="">createContact()</a><br />
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method_updateContact" class="">updateContact()</a><br />
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method_deleteContact" class="">deleteContact()</a><br />
-                                                                    <a href="../classes/CollingMedia.Infusionsoft.Contacts.html#method_customFields" class="">customFields()</a><br />
+                                                                    <a href="../classes/CollingMedia.Infusionsoft.Products.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/CollingMedia.Infusionsoft.Products.html#method_listProducts" class="">listProducts()</a><br />
+                                                                    <a href="../classes/CollingMedia.Infusionsoft.Products.html#method_getProduct" class="">getProduct()</a><br />
+                                                                    <a href="../classes/CollingMedia.Infusionsoft.Products.html#method_syncProducts" class="">syncProducts()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -283,14 +281,14 @@ in Infusionsoft.</p>
                     
                     <dl>
                         <dt>File</dt>
-                            <dd><a href="../files/Contacts.html"><div class="path-wrapper">Contacts.php</div></a></dd>
+                            <dd><a href="../files/Products.html"><div class="path-wrapper">Products.php</div></a></dd>
                                                 <dt>Package</dt>
                             <dd><div class="namespace-wrapper">CollingMedia\Infusionsoft</div></dd>
                                                 <dt>Class hierarchy</dt>
                             <dd class="hierarchy">
                                                                                                                                                                                                                                                                                                 
                                         <div class="namespace-wrapper"><a href="../classes/CollingMedia.Infusionsoft.Infusionsoft.html">\CollingMedia\Infusionsoft\Infusionsoft</a></div>
-                                                                                                    <div class="namespace-wrapper">\CollingMedia\Infusionsoft\Contacts</div>
+                                                                                                    <div class="namespace-wrapper">\CollingMedia\Infusionsoft\Products</div>
                             </dd>
 
                         
@@ -458,16 +456,16 @@ in Infusionsoft.</p>
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$accessToken = array()</span>) </pre>
-                <p><em>Contacts constructor.</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct(array  <span class="argument">$options = array()</span>) </pre>
+                <p><em>Appointments constructor.</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
                                 <td>array</td>
-                                <td>$accessToken </td>
-                                <td></td>
+                                <td>$options </td>
+                                <td><p>The options config array. See $options variable.</p></td>
                             </tr>
                                             </table>
                 
@@ -493,49 +491,14 @@ in Infusionsoft.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_listContacts" name="method_listContacts" class="anchor"></a>
+            <a id="method_listProducts" name="method_listProducts" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">listContacts()</h3>
+                <h3 class="public ">listProducts()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">listContacts(integer  <span class="argument">$limit = 1000</span>, integer|null  <span class="argument">$offset = null</span>, string  <span class="argument">$email = null</span>, string  <span class="argument">$given_name = null</span>, string  <span class="argument">$family_name = null</span>, string  <span class="argument">$order = null</span>) : mixed</pre>
-                <p><em>List all contacts in Infusionsoft</em></p>
+                <pre class="signature" style="margin-right: 54px;">listProducts() : mixed</pre>
+                <p><em>List products</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>integer</td>
-                                <td>$limit </td>
-                                <td><ul>
-<li>1000 is the max able to be returned at once</li>
-</ul></td>
-                            </tr>
-                                                    <tr>
-                                <td>integer|null</td>
-                                <td>$offset </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$email </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$given_name </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$family_name </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>string</td>
-                                <td>$order </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -556,111 +519,14 @@ in Infusionsoft.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_createContact" name="method_createContact" class="anchor"></a>
+            <a id="method_getProduct" name="method_getProduct" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">createContact()</h3>
+                <h3 class="public ">getProduct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">createContact(array  <span class="argument">$contact</span>) : mixed</pre>
-                <p><em>Create a contact in Infusionsoft
- ** THIS CREATES, NOT UPDATES **</em></p>
+                <pre class="signature" style="margin-right: 54px;">getProduct() : mixed</pre>
+                <p><em>Get Product</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>array</td>
-                                <td>$contact </td>
-                                <td></td>
-                            </tr>
-                                            </table>
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Exception</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                                    <h4>Returns</h4>
-                    mixed
-                                    				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_updateContact" name="method_updateContact" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">updateContact()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">updateContact(string  <span class="argument">$contactId</span>, array  <span class="argument">$contact</span>) : mixed</pre>
-                <p><em>Update a contact based on Contact ID</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>string</td>
-                                <td>$contactId </td>
-                                <td></td>
-                            </tr>
-                                                    <tr>
-                                <td>array</td>
-                                <td>$contact </td>
-                                <td></td>
-                            </tr>
-                                            </table>
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Exception</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                                    <h4>Returns</h4>
-                    mixed
-                                    				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_deleteContact" name="method_deleteContact" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">deleteContact()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">deleteContact(  <span class="argument">$contactId</span>) : mixed</pre>
-                <p><em>Delete Contact</em></p>
-                <p>Delete a contact from Infusionsoft
-based on the Contact ID.</p>
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td></td>
-                                <td>$contactId </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -681,15 +547,13 @@ based on the Contact ID.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
-            <a id="method_customFields" name="method_customFields" class="anchor"></a>
+            <a id="method_syncProducts" name="method_syncProducts" class="anchor"></a>
             <article class="method">
-                <h3 class="public ">customFields()</h3>
+                <h3 class="public ">syncProducts()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">customFields() : mixed</pre>
-                <p><em>Custom Fields</em></p>
-                <p>Get the custom fields that a
-contact can have assigned
-to it.</p>
+                <pre class="signature" style="margin-right: 54px;">syncProducts() : mixed</pre>
+                <p><em>Retrieve Synced Products</em></p>
+                
 
                 
                 
@@ -927,10 +791,10 @@ either the request object or array.</p>
     <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">Contacts.php</h3>
+            <h3 id="source-view-label">Products.php</h3>
         </div>
         <div class="modal-body">
-            <pre data-src="../files/Contacts.php.txt" class="language-php line-numbers"></pre>
+            <pre data-src="../files/Products.php.txt" class="language-php line-numbers"></pre>
         </div>
     </div>
 
